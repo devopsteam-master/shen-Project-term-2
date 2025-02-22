@@ -1,0 +1,7 @@
+global:
+  storageClass: "standard"  # Use your storage class
+postgresql:
+  replicaCount: 3           # Number of replicas
+  password: "mysecurepassword"
+pgpool:
+  replicaCount: 2           # Number of Pgpool replicas
