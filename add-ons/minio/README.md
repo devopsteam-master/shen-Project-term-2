@@ -95,7 +95,7 @@ statefulset.apps/minio                 1/1     2m
 1. **Set MinIO Alias in `mc`:**
 
 ```sh
-mc alias set Mecan https://object.devops.local/ adminasdasdasd admiasdasdasdn
+mc alias set Mecan http://object.devops.local/ adminasdasdasd admiasdasdasdn
 ```
 
 2. **List Existing Buckets:**
@@ -224,6 +224,7 @@ mc ls Mecan/velero-backup
 - **Ensure User Permissions** by **uploading and deleting a test file**:
 
 ```sh
+echo "test content" > testfile.txt
 mc cp testfile.txt Mecan/velero-backup
 mc rm Mecan/velero-backup/testfile.txt
 ```

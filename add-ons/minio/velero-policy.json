@@ -4,12 +4,11 @@
       {
           "Effect": "Allow",
           "Action": [
-              "s3:PutObject",
-              "s3:GetObject"
+              "s3:*"
           ],
           "Resource": [
-              "arn:aws:s3:::velero-backups",
-              "arn:aws:s3:::velero-backups/*"
+              "arn:aws:s3:::velero-backup",
+              "arn:aws:s3:::velero-backup/*"
           ]
       }
   ]
