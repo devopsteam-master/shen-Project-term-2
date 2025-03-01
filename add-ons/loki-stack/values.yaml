@@ -1,0 +1,31 @@
+---
+loki:
+  enabled: true
+  replicas: 1
+
+  persistence:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+    size: 50Gi
+    type: pvc
+
+  limits:
+    cpu: 1000m           # Maximum 1 core
+    memory: 2048Mi        # Maximum 2 GB
+
+  requests:
+    cpu: 500m             # Request 0.5 core
+    memory: 512Mi         # Request 512 MB
+
+---
+
+promtail:
+  enabled: true
+  resources:
+    limits:
+      cpu: 500m           # Maximum 0.5 core
+      memory: 512Mi       # Maximum 512 MB
+    requests:
+      cpu: 200m           # Request 0.2 core
+      memory: 248Mi       # Request 248 MB

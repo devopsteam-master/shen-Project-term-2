@@ -1,0 +1,17 @@
+global:
+  redis:
+    password: password
+
+replica:
+  replicaCount: 3
+
+sentinel:
+  enabled: true
+  quorum: 2
+  usePassword: true
+  password: password  # Ensure password is set for Sentinel
+
+auth:
+  enabled: true
+  password: password  # Password for accessing the Redis master
+
