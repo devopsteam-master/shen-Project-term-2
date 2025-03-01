@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: get-etcd-cert
+  namespace: default
+spec:
+  containers:
+  - image: busybox
+    command:
+      - sleep
+      - "1800"
+    imagePullPolicy: IfNotPresent
+    name: get-etcd-cert
+    volumeMounts:
+      - name: k8setcdcert
+        mountPath: /etc/kubernetes
+  hostNetwork: true
+  nodeName: mowj-control-plane-447st
+  volumes:
+  - hostPath:
+      path: /etc/kubernetes
+      type: ""
+    name: k8setcdcert
+  restartPolicy: Always
+    
