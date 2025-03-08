@@ -8,9 +8,9 @@ loki:
       - ReadWriteOnce
     size: 1Gi
     type: pvc
-    storageClassName: remote-disk
+    storageClassName: local-path
     annotations:
-      volume.beta.kubernetes.io/storage-class: remote-disk
+      volume.beta.kubernetes.io/storage-class: local-path
   limits:
     cpu: 1000m
     memory: 1024Mi
