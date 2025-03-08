@@ -1,0 +1,33 @@
+---
+loki:
+  enabled: true
+  replicas: 1
+  persistence:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+    size: 1Gi
+    type: pvc
+    storageClassName: remote-disk
+    annotations:
+      volume.beta.kubernetes.io/storage-class: remote-disk
+  limits:
+    cpu: 1000m
+    memory: 1024Mi
+  requests:
+    cpu: 500m
+    memory: 512Mi
+  image:
+    pullPolicy: IfNotPresent
+    repository: grafana/loki
+    tag: 2.9.3
+
+promtail:
+  enabled: true
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 200m
+      memory: 248Mi
